@@ -13,3 +13,7 @@ clients every time a change is detected.
 The chart will also react to data inserted into minimongo or MongoDB.
 
 Started with code from <http://nvd3.org/examples/line.html>.
+
+# Screencast
+
+[![Screencast of live graph](http://img.youtube.com/vi/5WInLm1XXT0/0.jpg)](http://www.youtube.com/watch?v=5WInLm1XXT0)
