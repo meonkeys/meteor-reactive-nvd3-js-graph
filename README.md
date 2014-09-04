@@ -8,14 +8,8 @@ clients every time a change is detected.
 1. cd into directory of clone
 1. run `meteor`
 1. navigate to <http://localhost:3000>
-1. open JavaScript console
-1. run `People.insert({x:1, y:25})`
-1. run `People.insert({x:2, y:74})`
-1. run `People.insert({x:3, y:38})`
-1. run `People.insert({x:4, y:39})`
-1. run `People.insert({x:5, y:18})`
-1. etc.
+1. add/remove data using buttons
 
-The chart will also react to data inserted directly into MongoDB.
+The chart will also react to data inserted into minimongo or MongoDB.
 
 Started with code from <http://nvd3.org/examples/line.html>.

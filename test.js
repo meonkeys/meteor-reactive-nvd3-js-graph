@@ -1,5 +1,9 @@
 People = new Meteor.Collection("people");
 
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 if (Meteor.isClient) {
   Template.hello.rendered = function() {
     var chart = nv.models.lineChart()
@@ -28,6 +32,24 @@ if (Meteor.isClient) {
       chart.update();
     });
   };
+
+  Template.hello.events({
+    'click #addDataButton': function() {
+      var age = getRandomInt(13, 89);
+      var lastPerson = People.findOne({}, {fields:{x:1},sort:{x:-1},limit:1,reactive:false});
+      if (lastPerson) {
+        People.insert({x:(lastPerson.x + 1), y:age});
+      } else {
+        People.insert({x:1, y:age});
+      }
+    },
+    'click #removeDataButton': function() {
+      var lastPerson = People.findOne({}, {fields:{x:1},sort:{x:-1},limit:1,reactive:false});
+      if (lastPerson) {
+        People.remove(lastPerson._id);
+      }
+    }
+  });
 }
 
 if (Meteor.isServer) {
