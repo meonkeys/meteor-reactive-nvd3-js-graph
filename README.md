@@ -1,8 +1,6 @@
 # NVD3.js example Meteor app
 
-Demonstration of a NVD3.js graph that reacts to changes in data. This naïve
-example does not (yet) stream data, the entire chart is pushed to all
-clients every time a change is detected.
+Demonstration of a NVD3.js graph that reacts to changes in data.
 
 1. clone this repository
 1. cd into directory of clone
@@ -10,7 +8,7 @@ clients every time a change is detected.
 1. navigate to <http://localhost:3000>
 1. add/remove data using buttons
 
-The chart will also react to data inserted into minimongo or MongoDB.
+The chart will react to data inserted client-side or server-side.
 
 Started with code from <http://nvd3.org/examples/line.html>.
 
