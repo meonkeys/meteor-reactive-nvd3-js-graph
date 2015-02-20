@@ -21,11 +21,11 @@ if (Meteor.isClient) {
       d3.select('#chart svg').datum(
         [{ values: People.find().fetch(), key: 'Age' }]
       ).call(chart);
-      nv.utils.windowResize(function() { chart.update() });
+      nv.utils.windowResize(function() { chart.update(); });
       return chart;
     });
 
-    Deps.autorun(function () {
+    Tracker.autorun(function () {
       d3.select('#chart svg').datum(
         [{ values: People.find().fetch(), key: 'Age' }]
       ).call(chart);
