@@ -25,7 +25,7 @@ if (Meteor.isClient) {
       return chart;
     });
 
-    Tracker.autorun(function () {
+    this.autorun(function () {
       d3.select('#chart svg').datum(
         [{ values: People.find().fetch(), key: 'Age' }]
       ).call(chart);
